@@ -1,0 +1,23 @@
+==================================================
+        INFORME DE AUDITORÍA LYNIS - LUZ
+==================================================
+[+] RESUMEN DEL SISTEMA
+- Update Status: NO UPDATE
+- Boot Manager: NONE FOUND (UEFI DISABLED)
+- Servicios activos: 35
+- Servicios habilitados: 70
+
+[+] ANÁLISIS DE SEGURIDAD (Systemd)
+- Servicios PROTECTED: 7 (polkit, journald, logind, networkd, oomd, resolved, timesyncd)
+- Servicios UNSAFE/EXPOSED: Mayoría (Docker, MySQL, Cups, NetworkManager, etc.)
+
+[+] DEBIAN & KERNEL
+- apt-listbugs: Not Installed
+- fail2ban: Installed
+- CPU PAE/NX: FOUND
+- Kernel Modules: 32 activos
+
+[+] WARNINGS DETECTADOS
+- DEB-0001: Ejecución larga (13.5s)
+- TIME-3185: (Corregido anteriormente)
+==================================================
