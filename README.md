@@ -22,7 +22,7 @@ Se transformó una instalación estándar en una estación de trabajo segura med
 *   **Configuración de Microsoft Defender (Nivel HIGH):** Implementación de reglas ASR (Attack Surface Reduction).
 *   **Seguridad de Hardware:** Activación de **VBS (Aislamiento de Núcleo)** e integridad de archivos con `SFC`.
 *   **Protección de Datos:** Blindaje de discos **C:** y **D:** mediante el Acceso Controlado a Carpetas.
-*   **Resiliencia:** Creación del punto de restauración maestro: `PC Blindada - LMTM`.
+*   **Resiliencia:** Creación del punto de restauración maestro: `Master_Security_Restore_Point`.
 
 ---
 
