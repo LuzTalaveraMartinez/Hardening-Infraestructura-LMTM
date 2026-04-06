@@ -49,6 +49,6 @@ En el mercado actual, la **AI Literacy (Alfabetización en IA)** es una habilida
 ---
 
 ## 🛠️ Stack Tecnológico
-*   **Sistemas:** Windows 11 (Host), Ubuntu 24.04 (Guest).
+*   **Sistemas:** Windows 11 PRO (Host), Ubuntu 24.04 (Guest).
 *   **Herramientas:** Lynis, UFW, Microsoft Defender, ConfigureDefender, VirtualBox.
 *   **Lenguajes:** Bash Scripting, Python.
