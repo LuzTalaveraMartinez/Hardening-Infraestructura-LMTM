@@ -1,8 +1,6 @@
 # 🛡️ Hardening de Infraestructura Linux - Framework LMTM v2.0
+**Hardening Index:** 82/100 🛡️ | **Nivel:** Fuerte 💪 | **Arquitectura:** Modular 🏛️
 
-![Hardening Index 82](https://shields.io)
-![Security Level](https://shields.io)
-![Architecture](https://shields.io)
 
 Framework profesional de securización automatizada para entornos **Debian/Ubuntu Server**. Este ecosistema de scripts y configuraciones eleva la postura de seguridad de un sistema *out-of-the-box* a un **Hardening Index de 82/100**, eliminando vectores de ataque críticos identificados por la metodología de auditoría de **Lynis**.
 
