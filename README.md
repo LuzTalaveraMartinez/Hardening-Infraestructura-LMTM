@@ -4,6 +4,7 @@
 ![Security Level](https://shields.io)
 ![Architecture](https://shields.io)
 
+
 Framework profesional de securización automatizada para entornos **Debian/Ubuntu Server**. Este ecosistema de scripts y configuraciones eleva la postura de seguridad de un sistema a un **Hardening Index de 82/100**, eliminando vectores de ataque críticos identificados por la metodología de auditoría de **Lynis**.
 
 **Autora:** Luz María Talavera Martínez  
@@ -11,6 +12,7 @@ Framework profesional de securización automatizada para entornos **Debian/Ubunt
 **Guía Metodológica:** Consultoría Avanzada Humano-IA
 
 ---
+
 
 ## 🤖 Ingeniería de Seguridad Asistida por IA
 
@@ -25,21 +27,28 @@ Este proyecto trasciende la ejecución de comandos simples; es el resultado de u
 
 ## 🛠️ Pilares Técnicos (Hardening Index 82)
 
+
 ### 1. Networking & Kernel Tuning
+
 *   **Protección ICMP:** Desactivación de redirects para mitigar ataques MitM.
 *   **RFC 3704 Filtering:** Activación de filtrado de ruta inversa para prevenir IP Spoofing.
 *   **Protocol Hardening:** Remoción de soporte para protocolos obsoletos (TIPC, USB Storage).
 
+
 ### 2. Acceso y Autenticación
+
 *   **OpenSSH Hardening:** Desactivación de login por Root, restricción de `MaxAuthTries` a 3 y eliminación de banners.
 *   **Criptografía:** Escalado de hashing a SHA512 con **10,000 rondas**.
 *   **PAM Quality:** Forzado de complejidad de contraseñas.
 
+
 ### 3. Seguridad del Arranque y FileSystem
+
 *   **Boot Security:** Protección del gestor de arranque GRUB con credenciales administrativas cifradas.
 *   **Integridad:** Configuración de `Auditd` para monitorear archivos críticos (`/etc/passwd`, `/etc/sudoers`).
 
 ---
+
 
 ## 📂 Estructura del Ecosistema
 
