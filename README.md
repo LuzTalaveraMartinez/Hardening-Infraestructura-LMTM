@@ -39,6 +39,16 @@ Este proyecto trasciende la ejecución de comandos simples; es el resultado de u
 
 ---
 
+
+## 📊 Evidencia de Auditoría
+Tras la aplicación del framework, se obtuvo una calificación de **82/100** en el Hardening Index, validando la eficacia de los controles implementados.
+
+![Reporte de auditoría Lynis - Hardening Index 82](./docs/lynis-hardening-index-82.png)
+
+*Figura 1: Resultado final de la auditoría de seguridad realizada con Lynis.*
+
+
+
 ## 📂 Estructura del Ecosistema
 
 *   📄 [**install.sh**](./install.sh) - Orquestador Maestro: Lógica de despliegue y validación.
