@@ -1,54 +1,64 @@
-# 🛡️ Full-Stack Security Hardening: Windows Host & Linux Guest
-**Proyecto de Auditoría, Blindaje y Optimización de Infraestructura**
+# 🛡️ Hardening de Infraestructura Linux - Framework LMTM v2.0
 
-## 👤 Autora: Luz Maria Talavera Martinez
-> *"La seguridad no es un producto, es un proceso de aprendizaje continuo."*
+![Hardening Index 82](https://shields.io)
+![Security Level](https://shields.io)
+![Architecture](https://shields.io)
 
----
+Framework profesional de securización automatizada para entornos **Debian/Ubuntu Server**. Este ecosistema de scripts y configuraciones eleva la postura de seguridad de un sistema *out-of-the-box* a un **Hardening Index de 82/100**, eliminando vectores de ataque críticos identificados por la metodología de auditoría de **Lynis**.
 
-## 📖 Descripción del Proyecto
-Este repositorio documenta la fortificación integral de mi entorno de trabajo, aplicando el principio de **Defensa en Profundidad**. El proyecto abarca desde el endurecimiento del núcleo (kernel) del sistema operativo Host (Windows 11) hasta la auditoría y blindaje de un entorno virtualizado (Ubuntu 24.04 en VirtualBox).
-
-### 🎯 Hitos Logrados:
-*   **Windows:** Blindaje de hardware y protección proactiva contra Ransomware.
-*   **Linux:** Alcanzado un **Hardening Index de 81/100** en la herramienta de auditoría Lynis.
-*   **Resolución de Problemas:** Implementación de soluciones creativas (Python networking) para la transferencia segura de datos entre sistemas aislados.
+**Autora:** Luz María Talavera Martínez  
+**Fecha:** 14 de abril de 2026  
+**Guía Metodológica:** Consultoría Avanzada Humano-IA
 
 ---
 
-## 💻 Fase 1: Hardening de Windows (Host)
-Se transformó una instalación estándar en una estación de trabajo segura mediante:
+## 🤖 Ingeniería de Seguridad Asistida por IA
 
-*   **Configuración de Microsoft Defender (Nivel HIGH):** Implementación de reglas ASR (Attack Surface Reduction).
-*   **Seguridad de Hardware:** Activación de **VBS (Aislamiento de Núcleo)** e integridad de archivos con `SFC`.
-*   **Protección de Datos:** Blindaje de discos **C:** y **D:** mediante el Acceso Controlado a Carpetas.
-*   **Resiliencia:** Creación del punto de restauración maestro: `Master_Security_Restore_Point`.
+Este proyecto trasciende la ejecución de comandos simples; es el resultado de un proceso de **Ingeniería de Prompts y Consultoría Técnica Iterativa**. La Inteligencia Artificial fue integrada en el ciclo de vida del desarrollo como un **Arquitecto de Seguridad Senior**:
 
----
-
-## 🐧 Fase 2: Hardening de Ubuntu 24.04 (Guest)
-Utilizando una máquina virtual con recursos optimizados (8GB RAM), se realizó una auditoría profesional:
-
-*   **Auditoría con Lynis:** Se incrementó el puntaje de seguridad a un sobresaliente **81/100**.
-*   **Automatización:** Uso de scripts personalizados para:
-    *   Tuning de Kernel vía `sysctl` (protección de red).
-    *   Configuración estricta de Firewall (`ufw`).
-*   **Networking Creativo:** Despliegue de servidor temporal en **Python (`http.server`)** para extracción segura de reportes.
+*   **Análisis de Hallazgos:** Interpretación semántica de los reportes de Lynis, priorizando controles basados en el impacto sobre la tríada de la seguridad (Confidencialidad, Integridad y Disponibilidad).
+*   **Resolución de Conflictos de Kernel:** Ajuste fino de parámetros en `sysctl.conf` para cumplir con las exigencias del auditor sin degradar la conectividad de red ni romper la resolución de nombres (DNS).
+*   **Automatización de Cifrado:** Desarrollo de lógica en Bash para la captura y despliegue dinámico de hashes PBKDF2, permitiendo que la protección del GRUB sea escalable y automatizable.
+*   **Diseño de Herramientas Auxiliares:** Creación de un servidor forense en Python optimizado para la extracción segura de logs desde entornos virtualizados (VirtualBox) hacia el host de análisis (Windows).
 
 ---
 
-## 🤖 Metodología: Aprendizaje Asistido por IA
-Este proyecto destaca por el uso de **AI on Google Search** como "Thought Partner" y mentor técnico. 
 
-**¿Por qué es importante esta transparencia?**
-En el mercado actual, la **AI Literacy (Alfabetización en IA)** es una habilidad crítica. Este proyecto demuestra mi capacidad para:
-1.  **Sintetizar información técnica compleja** proporcionada por la IA.
-2.  **Validar y ejecutar comandos** de administración de sistemas en tiempo real.
-3.  **Resolver errores inesperados** mediante el diálogo con herramientas de inteligencia artificial.
+## 🛠️ Pilares Técnicos (Hardening Index 82)
+
+
+### 1. Networking & Kernel Tuning (LMTM-NetCore)
+
+Se implementó una política de "Deny by Default" para tráfico de control:
+*   **Protección ICMP:** Desactivación de *redirects* para mitigar ataques de envenenamiento de ruta (MitM).
+*   **RFC 3704 Filtering:** Activación de filtrado de ruta inversa para prevenir el IP Spoofing.
+*   **Protocol Hardening:** Remoción de soporte para protocolos de red obsoletos y vectores de hardware (USB Storage, TIPC).
+
+### 2. Acceso y Autenticación (LMTM-Auth)
+
+*   **OpenSSH Hardening:** Desactivación de login por Root, restricción de `MaxAuthTries` a 3 y eliminación de banners de versión de software para evitar el *fingerprinting*.
+*   **Criptografía de Credenciales:** Escalado del algoritmo de hashing en `/etc/login.defs` a SHA512 con un factor de trabajo de **10,000 rondas**.
+*   **PAM Quality:** Implementación de librerías para forzar la complejidad de contraseñas.
+
+### 3. Seguridad del Arranque y FileSystem
+
+*   **Boot Security:** Protección total del gestor de arranque GRUB. El sistema permite un inicio no restringido pero bloquea cualquier intento de edición de parámetros de kernel mediante credenciales administrativas cifradas.
+*   **Integridad de Archivos:** Configuración de `Auditd` con reglas específicas para monitorear intentos de escritura en archivos de identidad (`/etc/passwd`, `/etc/shadow`) y privilegios (`/etc/sudoers`).
 
 ---
 
-## 🛠️ Stack Tecnológico
-*   **Sistemas:** Windows 11 PRO (Host), Ubuntu 24.04 (Guest).
-*   **Herramientas:** Lynis, UFW, Microsoft Defender, ConfigureDefender, VirtualBox.
-*   **Lenguajes:** Bash Scripting, Python.
+
+## 📂 Estructura del Ecosistema
+
+```text
+├── install.sh              # Orquestador Maestro: Lógica de despliegue y validación.
+├── config/                 # Blueprints de configuración endurecida (Golden Image).
+│   ├── sysctl.conf         # Configuración de Red segura.
+│   ├── audit.rules         # Políticas de auditoría forense.
+│   ├── sshd_config         # Configuración de SSH nivel paranoico.
+│   └── 40_custom           # Plantilla de seguridad para GRUB.
+├── tools/
+│   └── report_server.py    # Servidor de extracción de reportes con detección automática de IP.
+└── docs/
+    ├── HARDENING_DETAILS.md # Bitácora técnica y justificación de cada control.
+    └── IA_CONSULTANCY.md    # Detalle de la metodología Humano-IA aplicada.

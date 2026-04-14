@@ -1,0 +1,9 @@
+-D
+-b 8192
+-f 1
+--backlog_wait_time 60000
+-w /etc/passwd -p wa -k cambios_usuarios
+-w /etc/shadow -p wa -k cambios_usuarios
+-w /etc/sudoers -p wa -k privilegios
+-w /etc/sysctl.conf -p wa -k config_kernel
+-e 1
