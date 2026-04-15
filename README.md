@@ -40,14 +40,13 @@ Este proyecto trasciende la ejecución de comandos simples; es el resultado de u
 
 ---
 
-## 🆙 Novedades de la Versión v2.1 (Actualización de Seguridad)
-En esta iteración, el framework ha sido optimizado para superar limitaciones técnicas y elevar la precisión del diagnóstico:
+## 🆙 Novedades de la Versión v2.2 (Refactorización Senior)
+Esta versión se enfoca en la **portabilidad** y la **seguridad de credenciales**, eliminando dependencias de rutas estáticas y mejorando el manejo de secretos:
 
-*   **Upgrade del Auditor:** Migración del motor de auditoría a **Lynis 3.1.2** para eliminar falsos positivos por antigüedad de software.
-*   **Compliance Legal:** Implementación de Banners de advertencia en `/etc/issue` y `/etc/issue.net`, cumpliendo con estándares internacionales de acceso restringido.
-*   **Reducción de Superficie de Ataque:** Desactivación completa del subsistema de impresión (`CUPS` y sus sockets) para eliminar vectores de ataque innecesarios en servidores.
-*   **Endurecimiento de Privilegios:** Restricción de permisos en archivos de registro (`logs`) y configuración del sistema para prevenir la enumeración por parte de usuarios no privilegiados.
-*   **Optimización del Orquestador:** El script `install.sh` ahora gestiona automáticamente la descarga y validación de la última versión de la herramienta de auditoría.
+*   **Portabilidad Dinámica (BASE_DIR):** Se implementó lógica de detección de rutas absolutas. El framework ahora es independiente de la ubicación de descarga, garantizando un despliegue exitoso desde cualquier directorio.
+*   **Gestión de Secretos en Vivo:** Eliminación de hashes estáticos (*hardcoded*) en el script. El sistema ahora genera **hashes PBKDF2 en tiempo real** durante la instalación, personalizando la seguridad del GRUB para cada usuario.
+*   **Optimización de Auditoría:** Integración definitiva de **Lynis 3.1.2** como motor de validación post-despliegue.
+*   **Limpieza de Superficie de Ataque:** Remoción total de servicios de impresión y optimización de permisos en logs de auditoría.
 
 
 ---
