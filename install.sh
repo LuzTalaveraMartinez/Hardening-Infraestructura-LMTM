@@ -10,6 +10,15 @@ echo "--- Iniciando Despliegue de Seguridad ---"
 sudo apt update && sudo apt dist-upgrade -y
 sudo apt install auditd fail2ban rkhunter sysstat acct libpam-pwquality -y
 
+# 1.5 Descarga y Auditoría con Lynis 3.1.2
+echo "--- Instalando Lynis 3.1.2 ---"
+cd /tmp
+wget https://downloads.cisofy.com/lynis/lynis-3.1.2.tar.gz
+tar xfvz lynis-3.1.2.tar.gz
+sudo chown -R root:root /tmp/lynis
+cd /tmp/lynis
+sudo ./lynis audit system
+
 # 2. Aplicar configuraciones desde carpeta config/
 # Asegúrate de haber creado la carpeta config y movido los archivos ahí
 sudo cp config/sysctl.conf /etc/sysctl.conf

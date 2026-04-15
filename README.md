@@ -1,4 +1,4 @@
-# 🛡️ Hardening de Infraestructura Linux - Framework LMTM v2.0
+# 🛡️ Hardening de Infraestructura Linux - Framework LMTM v2.1
 
 **Hardening Index:** 82/100 🛡️ | **Nivel:** Fuerte 💪 | **Arquitectura:** Modular 🏛️
 
@@ -36,6 +36,19 @@ Este proyecto trasciende la ejecución de comandos simples; es el resultado de u
 ### 3. Seguridad del Arranque y FileSystem
 *   **Boot Security:** Protección total del gestor de arranque GRUB mediante credenciales administrativas cifradas.
 *   **Integridad de Archivos:** Configuración de `Auditd` para monitorear archivos de identidad (`/etc/passwd`) y privilegios (`/etc/sudoers`).
+
+
+---
+
+## 🆙 Novedades de la Versión v2.1 (Actualización de Seguridad)
+En esta iteración, el framework ha sido optimizado para superar limitaciones técnicas y elevar la precisión del diagnóstico:
+
+*   **Upgrade del Auditor:** Migración del motor de auditoría a **Lynis 3.1.2** para eliminar falsos positivos por antigüedad de software.
+*   **Compliance Legal:** Implementación de Banners de advertencia en `/etc/issue` y `/etc/issue.net`, cumpliendo con estándares internacionales de acceso restringido.
+*   **Reducción de Superficie de Ataque:** Desactivación completa del subsistema de impresión (`CUPS` y sus sockets) para eliminar vectores de ataque innecesarios en servidores.
+*   **Endurecimiento de Privilegios:** Restricción de permisos en archivos de registro (`logs`) y configuración del sistema para prevenir la enumeración por parte de usuarios no privilegiados.
+*   **Optimización del Orquestador:** El script `install.sh` ahora gestiona automáticamente la descarga y validación de la última versión de la herramienta de auditoría.
+
 
 ---
 
