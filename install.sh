@@ -6,6 +6,8 @@
 
 echo "--- Iniciando Despliegue de Seguridad ---"
 
+BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 # 1. Actualización y Herramientas
 sudo apt update && sudo apt dist-upgrade -y
 sudo apt install auditd fail2ban rkhunter sysstat acct libpam-pwquality -y
@@ -21,10 +23,10 @@ sudo ./lynis audit system
 
 # 2. Aplicar configuraciones desde carpeta config/
 # Asegúrate de haber creado la carpeta config y movido los archivos ahí
-sudo cp config/sysctl.conf /etc/sysctl.conf
+sudo cp "$BASE_DIR/config/sysctl.conf" /etc/sysctl.conf
 sudo sysctl -p
-sudo cp config/audit.rules /etc/audit/rules.d/audit.rules
-sudo cp config/sshd_config /etc/ssh/sshd_config
+sudo cp "$BASE_DIR/config/audit.rules" /etc/audit/rules.d/audit.rules
+sudo cp "$BASE_DIR/config/sshd_config" /etc/ssh/sshd_config
 
 # 3. Banners Legales (Reconocidos por Lynis)
 sudo bash -c 'echo "Legal Notice: Restricted access only. All activities are logged." > /etc/issue'
